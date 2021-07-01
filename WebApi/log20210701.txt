@@ -3106,3 +3106,9 @@ ORDER BY [MigrationId];
 2021-07-01 12:11:43.992 +04:30 [INF] Request finished HTTP/2 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded;+charset=UTF-8 228 - 200 - application/json 3.5696ms
 2021-07-01 12:11:46.983 +04:30 [INF] Request starting HTTP/2 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded;+charset=UTF-8 228
 2021-07-01 12:11:46.987 +04:30 [INF] Request finished HTTP/2 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded;+charset=UTF-8 228 - 200 - application/json 3.9395ms
+2021-07-01 12:13:41.545 +04:30 [INF] Application is shutting down...
+2021-07-01 12:13:41.699 +04:30 [INF] Server desktop-7hkhhu2:20128:ae5ca0e8 caught stopping signal...
+2021-07-01 12:13:41.710 +04:30 [INF] Server desktop-7hkhhu2:20128:ae5ca0e8 caught stopped signal...
+2021-07-01 12:13:42.791 +04:30 [INF] Server desktop-7hkhhu2:20128:ae5ca0e8 All dispatchers stopped
+2021-07-01 12:13:42.811 +04:30 [INF] Server desktop-7hkhhu2:20128:ae5ca0e8 successfully reported itself as stopped in 15/9628 ms
+2021-07-01 12:13:42.813 +04:30 [INF] Server desktop-7hkhhu2:20128:ae5ca0e8 has been stopped in total 1108/3898 ms
