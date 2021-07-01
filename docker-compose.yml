@@ -6,11 +6,17 @@ services:
     build:
       context: .
       dockerfile: WebApi/Dockerfile
+    depends_on:
+           - raimunDb
+           - rabbitmq
 
   rabbitmq:
      image: rabbitmq:3-management-alpine
 
         
   raimunDb:
-     image: mcr.microsoft.com/mssql/server
+     image: mcr.microsoft.com/mssql/server:latest
+     environment:
+            SA_PASSWORD: "123456"
+            ACCEPT_EULA: "Y"
   

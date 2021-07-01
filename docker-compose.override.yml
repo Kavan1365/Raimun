@@ -22,7 +22,7 @@ services:
         environment:
              - ASPNETCORE_ENVIRONMENT=Development
              - ASPNETCORE_URLS=https://+:443;http://+:80
-             - "ConnectionStrings:SqlServer=raimunDb;Database=RaimunDbContext;User=sa;Password=12456"
+             - "ConnectionStrings:Server=raimunDb;Database=RaimunDbContext;User=sa;Password=123456;"
              - "EventBus:HostName=rabbitmq"
         depends_on:
             - raimunDb
