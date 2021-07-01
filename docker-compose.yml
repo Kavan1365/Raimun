@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  webapi:
+    image: ${DOCKER_REGISTRY-}webapi
+    build:
+      context: .
+      dockerfile: WebApi/Dockerfile
+
+  rabbitmq:
+     image: rabbitmq:3-management-alpine
+
+        
+  raimunDb:
+     image: mcr.microsoft.com/mssql/server
+  

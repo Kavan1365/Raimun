@@ -1,0 +1,35 @@
+version: '3.4'
+
+services:
+  rabbitmq:
+        container_name: rabbitmq
+        restart: always        
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+  raimunDb:
+        container_name: raimunDb
+        image: mcr.microsoft.com/mssql/server:latest
+        restart: always        
+        ports:
+            - "1433:1433"
+        environment:
+            SA_PASSWORD: "123456"
+            ACCEPT_EULA: "Y"
+  webapi:
+        container_name: WebApi
+        restart: on-failure
+        environment:
+             - ASPNETCORE_ENVIRONMENT=Development
+             - ASPNETCORE_URLS=https://+:443;http://+:80
+             - "ConnectionStrings:SqlServer=raimunDb;Database=RaimunDbContext;User=sa;Password=12456"
+             - "EventBus:HostName=rabbitmq"
+        depends_on:
+            - raimunDb
+            - rabbitmq
+        ports:
+           - "80"
+           - "443"
+        volumes:
+         - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+         - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
